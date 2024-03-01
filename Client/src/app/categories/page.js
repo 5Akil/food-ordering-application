@@ -16,7 +16,7 @@ export default function CategoriesPage() {
   console.log(profileData);
   useEffect(() => {
     fetchCategories();
-  }, []);
+  }, [fetchCategories]);
 
   function fetchCategories() {
     fetch.get('/categories').then(res => {

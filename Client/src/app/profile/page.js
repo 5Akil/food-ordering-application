@@ -27,7 +27,7 @@ export default function ProfilePage() {
       setIsAdmin(data.isAdmin);
       setProfileFetched(true);
     });
-  }, []);
+  }, [fetch]);
 
   async function handleProfileInfoUpdate(ev, data) {
     ev.preventDefault();

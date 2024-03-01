@@ -12,7 +12,7 @@ export default function HomeMenu() {
     fetch.get(`/menu_items`).then(menuItems => {
       setBestSellers(menuItems.slice(-3));  
     });
-  }, []);
+  }, [fetch]);
   return (
     bestSellers &&
     <section className="">

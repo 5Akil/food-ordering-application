@@ -15,7 +15,7 @@ export default function UsersPage() {
     fetch.get('/user/list').then(users => {
       if (users.length != 0) setUsers(users);
     });
-  }, []);
+  }, [fetch]);
 
   if (loading) {
     return 'Loading user info...';

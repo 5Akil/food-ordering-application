@@ -22,7 +22,7 @@ export default function EditMenuItemPage() {
       const item = res.find(i => i._id === id);
       setMenuItem(item);
     })
-  }, []);
+  }, [fetch , id]);
 
   async function handleFormSubmit(ev, data) {
     ev.preventDefault();

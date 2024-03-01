@@ -23,7 +23,7 @@ export default function OrdersPage() {
   }
   useEffect(() => {
     fetchOrders();
-  }, []);
+  }, [fetchOrders]);
 
   return (
     !loading &&

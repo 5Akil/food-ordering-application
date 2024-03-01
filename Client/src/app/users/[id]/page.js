@@ -19,7 +19,7 @@ export default function EditUserPage() {
     fetch.get('/user?_id=' + id).then(user => {
       if (user) { setUser(user), setIsLoading(false) };
     })
-  }, []);
+  }, [fetch,id]);
   async function handleSaveButtonClick(ev, data) {
     ev.preventDefault();
     const promise = new Promise(async (resolve, reject) => {
@@ -59,7 +59,7 @@ export default function EditUserPage() {
         <>
           <section className="mt-8 text-center">
             <SectionHeaders mainHeader="Ooh No!!!" />
-            <p className="mt-4">"can not find user" 😔</p>
+            <p className="mt-4"> `can not find user` 😔</p>
           </section>
         </> :
       <>

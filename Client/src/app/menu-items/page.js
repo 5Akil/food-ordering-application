@@ -17,7 +17,7 @@ export default function MenuItemsPage() {
     fetch.get('/menu_items').then(res => {
       setMenuItems(res);
     });
-  }, []);
+  }, [fetch]);
 
   if (loading) {
     return 'Loading user info...';

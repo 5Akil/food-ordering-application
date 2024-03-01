@@ -21,21 +21,20 @@ export function cartProductPrice(cartProduct) {
 export function AppProvider({ children, session }) {
   const [cartProducts, setCartProducts] = useState([]);
   const [userName, setUserName] = useState(null);
-
   const ls = typeof window !== 'undefined' ? window.localStorage : null;
 
   useEffect(() => {
     if (ls && ls.getItem('cart')) {
       setCartProducts(JSON.parse(ls.getItem('cart')));
     }
-  }, []);
+  }, [ls]);
   useEffect(() => {
     if (ls && ls.getItem('user')) {
       const userJSON = ls?.getItem("user");
       const user = userJSON ? JSON.parse(userJSON) : null;
       setUserName(user.email)
     }
-  }, [])
+  }, [ls])
 
   function clearCart() {
     setCartProducts([]);

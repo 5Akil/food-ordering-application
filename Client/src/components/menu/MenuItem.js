@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 
 export default function MenuItem(menuItem) {
   const {
-    image, name, description, basePrice,
+    image:img, name, description, basePrice,
     sizes, extraIngredientPrices,
   } = menuItem;
   const [
@@ -16,7 +16,6 @@ export default function MenuItem(menuItem) {
   const [selectedExtras, setSelectedExtras] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
   const { addToCart } = useContext(CartContext);
-
   async function handleAddToCartButtonClick() {
     const hasOptions = sizes.length > 0 || extraIngredientPrices.length > 0;
     if (hasOptions && !showPopup) {
@@ -69,7 +68,7 @@ export default function MenuItem(menuItem) {
               className="overflow-y-scroll p-2"
               style={{ maxHeight: 'calc(100vh - 100px)' }}>
               <Image
-                src={image}
+                src={img}
                 alt={name}
                 width={300} height={200}
                 className="mx-auto" />
@@ -116,7 +115,7 @@ export default function MenuItem(menuItem) {
               <FlyingButton
                 targetTop={'5%'}
                 targetLeft={'95%'}
-                src={image}>
+                src={img}>
                 <div className="primary sticky bottom-2"
                   onClick={handleAddToCartButtonClick}>
                   Add to cart ${Number(parseFloat(selectedPrice).toFixed(2))}

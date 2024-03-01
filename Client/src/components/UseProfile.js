@@ -21,7 +21,7 @@ export function useProfile() {
         setLoading(false);
       }
     })
-  }, []);
+  }, [fetch]);
 
   return { loading, data };
 }
